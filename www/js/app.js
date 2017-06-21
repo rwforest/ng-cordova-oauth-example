@@ -39,7 +39,15 @@ angular.module('starter', ['ionic', 'ngCordovaOauth'])
     }
 
     $scope.facebookLogin = function() {
-        $cordovaOauth.facebook("CLIENT_ID_HERE", ["email"], {"auth_type": "rerequest"}).then(function(result) {
+        $cordovaOauth.facebook("367581016657031", ["email"], {"auth_type": "rerequest"}).then(function(result) {
+            console.log(JSON.stringify(result));
+        }, function(error) {
+            console.log(JSON.stringify(error));
+        });
+    }
+
+	$scope.cleverLogin = function() {
+        $cordovaOauth.clever("8b4601209eabeef73670", "7b3575240bcee395fbe4b4f11ff0b9ddbfd29f9e").then(function(result) {
             console.log(JSON.stringify(result));
         }, function(error) {
             console.log(JSON.stringify(error));
